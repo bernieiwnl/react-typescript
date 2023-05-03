@@ -1,4 +1,5 @@
-import "./ExpenseItem.css";
+import "../css/ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
 
 interface Props {
   date: Date;
@@ -8,9 +9,10 @@ interface Props {
 
 const ExpenseItem = (props: Props) => {
   const { date, title, amount } = props;
+
   return (
     <div className="expense-item">
-      <div>{date.toString()}</div>
+      <ExpenseDate date={date} />
       <div className="expense-item__description">
         <h2>{title}</h2>
         <div className="expense-item__price">{amount}</div>
