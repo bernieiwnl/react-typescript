@@ -1,10 +1,10 @@
 import "../css/ExpenseDate.css";
 
-interface Props {
+interface Calendar {
   date: Date;
 }
 
-const ExpenseDate = (calendar: Props) => {
+const ExpenseDate = (calendar: Calendar) => {
   const { date } = calendar;
   const month = date.toLocaleString("en-US", { month: "long" });
   const year = date.toLocaleString("en-US", { year: "numeric" });
