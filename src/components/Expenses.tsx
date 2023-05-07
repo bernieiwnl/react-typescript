@@ -1,5 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
 import "../css/Expenses.css";
+import Card from "./Card";
 
 interface Expense {
   id: string;
@@ -15,7 +16,7 @@ interface Expenses {
 const Expenses = (props: Expenses) => {
   const { expenses } = props;
   return (
-    <div className="expenses">
+    <Card className="expenses">
       {expenses.map((item) => (
         <ExpenseItem
           key={item.id}
@@ -24,24 +25,8 @@ const Expenses = (props: Expenses) => {
           amount={item.amount}
         />
       ))}
-    </div>
+    </Card>
   );
 };
 
 export default Expenses;
-
-/* <ExpenseItem
-        title={expenses[0].title}
-        date={expenses[0].date}
-        amount={expenses[0].amount}
-      />
-        <ExpenseItem
-            title={expenses[1].title}
-            date={expenses[1].date}
-            amount={expenses[1].amount}
-        />
-        <ExpenseItem
-            title={expenses[2].title}
-            date={expenses[2].date}
-            amount={expenses[2].amount}
-        />   */
