@@ -1,3 +1,4 @@
+
 import "../css/ExpenseDate.css";
 
 interface Calendar {
@@ -8,7 +9,7 @@ const ExpenseDate = (calendar: Calendar) => {
   const { date } = calendar;
   const month = date.toLocaleString("en-US", { month: "long" });
   const year = date.toLocaleString("en-US", { year: "numeric" });
-  const day = date.toLocaleString("en-US", { day: "numeric" });
+  const day = date.toLocaleString("en-US", { day: "2-digit" });
 
   return (
     <div className="expense-date">

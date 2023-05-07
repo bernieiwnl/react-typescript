@@ -1,6 +1,7 @@
+
 import ExpenseItem from "./ExpenseItem";
-import "../css/Expenses.css";
 import Card from "./Card";
+import "../css/Expenses.css";
 
 interface Expense {
   id: string;
