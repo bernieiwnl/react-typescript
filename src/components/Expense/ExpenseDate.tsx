@@ -1,5 +1,4 @@
-
-import "../css/ExpenseDate.css";
+import "../../css/ExpenseDate.css";
 
 interface Calendar {
   date: Date;

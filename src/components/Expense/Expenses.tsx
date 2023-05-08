@@ -1,7 +1,6 @@
-
 import ExpenseItem from "./ExpenseItem";
-import Card from "./Card";
-import "../css/Expenses.css";
+import Card from "../UI/Card";
+import "../../css/Expenses.css";
 
 interface Expense {
   id: string;
