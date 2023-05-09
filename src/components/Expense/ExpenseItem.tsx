@@ -1,19 +1,21 @@
+import { useState } from "react";
 import Card from "../UI/Card";
 import ExpenseDate from "./ExpenseDate";
 import "../../css/ExpenseItem.css";
 
 interface Props {
-  keyId: string;
   date: Date;
   title: string;
   amount: number;
 }
 
 const ExpenseItem = (props: Props) => {
-  const { keyId, date, title, amount } = props;
+  const { date, amount } = props;
+
+  const [title, setTitle] = useState(props.title);
 
   const buttonClickHandler = () => {
-    alert(`You click ${keyId}`);
+    setTitle("Updated Title");
   };
 
   return (
