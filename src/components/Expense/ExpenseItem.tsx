@@ -6,7 +6,7 @@ import "../../css/ExpenseItem.css";
 interface Props {
   date: Date;
   title: string;
-  amount: number;
+  amount?: number;
 }
 
 const ExpenseItem = (props: Props) => {
@@ -19,16 +19,18 @@ const ExpenseItem = (props: Props) => {
   };
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={date} />
-      <div className="expense-item__description">
-        <h2>{title}</h2>
-        <div className="expense-item__price">{amount}</div>
-        <button onClick={buttonClickHandler} className="expense-item__price">
-          Button
-        </button>
-      </div>
-    </Card>
+    <>
+      <Card className="expense-item">
+        <ExpenseDate date={date} />
+        <div className="expense-item__description">
+          <h2>{title}</h2>
+          <div className="expense-item__price">{amount}</div>
+          <button onClick={buttonClickHandler} className="expense-item__price">
+            Button
+          </button>
+        </div>
+      </Card>
+    </>
   );
 };
 
