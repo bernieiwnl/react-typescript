@@ -16,16 +16,18 @@ interface Expenses {
 const Expenses = (props: Expenses) => {
   const { expenses } = props;
   return (
-    <Card className="expenses">
-      {expenses.map((item) => (
-        <ExpenseItem
-          key={item.id}
-          title={item.title}
-          date={item.date}
-          amount={item.amount}
-        />
-      ))}
-    </Card>
+    <>
+      <Card className="expenses">
+        {expenses.map((item) => (
+          <ExpenseItem
+            key={item.id}
+            title={item.title}
+            date={item.date}
+            amount={item.amount}
+          />
+        ))}
+      </Card>
+    </>
   );
 };
 

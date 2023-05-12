@@ -11,11 +11,13 @@ const ExpenseDate = (calendar: Calendar) => {
   const day = date.toLocaleString("en-US", { day: "2-digit" });
 
   return (
-    <div className="expense-date">
-      <div className="expense-date__month">{month}</div>
-      <div className="expense-date__year">{year}</div>
-      <div className="expense-date__date">{day}</div>
-    </div>
+    <>
+      <div className="expense-date">
+        <div className="expense-date__month">{month}</div>
+        <div className="expense-date__year">{year}</div>
+        <div className="expense-date__date">{day}</div>
+      </div>
+    </>
   );
 };
 
