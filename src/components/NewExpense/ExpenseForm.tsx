@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import "../../css/ExpenseForm.css";
 
+interface Props {
+  onSaveExpenseData: (childEnteredExpenseData: InputExpense) => void;
+}
+
 type InputExpense = {
   title: string;
   amount: number;
-  date: string;
+  date: Date;
 };
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ onSaveExpenseData }: Props) => {
   const [enteredExpense, setEnteredExpense] = useState<InputExpense>({
     title: "",
     amount: 0,
-    date: "",
+    date: new Date(),
   });
 
   const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +36,7 @@ const ExpenseForm = () => {
   const dateChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredExpense((prevState) => ({
       ...prevState,
-      date: event.target.value,
+      date: new Date(event.target.value),
     }));
   };
 
@@ -43,13 +47,12 @@ const ExpenseForm = () => {
       amount: enteredExpense.amount,
       date: enteredExpense.date,
     };
-    console.log(newExpenseData);
-
+    onSaveExpenseData(newExpenseData);
     //reset form fields
     setEnteredExpense({
       title: "",
       amount: 0,
-      date: "",
+      date: new Date(),
     });
   };
 
@@ -82,7 +85,7 @@ const ExpenseForm = () => {
               type="date"
               min="2022-01-01"
               max="2023-12-31"
-              value={enteredExpense.date}
+              value={enteredExpense.date.toISOString().substring(0, 10)}
               onChange={dateChangeHandler}
             />
           </div>
