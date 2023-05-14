@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import "../../css/ExpenseForm.css";
 
 interface Props {
-  onSaveExpenseData: (childEnteredExpenseData: InputExpense) => void;
+  onSaveExpenseData: (childEnteredExpenseData: Expense) => void;
 }
 
-type InputExpense = {
+type Expense = {
+  id: string;
   title: string;
   amount: number;
   date: Date;
 };
 
 const ExpenseForm = ({ onSaveExpenseData }: Props) => {
-  const [enteredExpense, setEnteredExpense] = useState<InputExpense>({
+  const [enteredExpense, setEnteredExpense] = useState<Expense>({
+    id: "",
     title: "",
     amount: 0,
     date: new Date(),
@@ -42,14 +44,17 @@ const ExpenseForm = ({ onSaveExpenseData }: Props) => {
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newExpenseData: InputExpense = {
+    const newExpenseData: Expense = {
+      id: "",
       title: enteredExpense.title,
       amount: enteredExpense.amount,
       date: enteredExpense.date,
     };
+    //passing data from child components to parent components newExpense.tsx component
     onSaveExpenseData(newExpenseData);
     //reset form fields
     setEnteredExpense({
+      id: "",
       title: "",
       amount: 0,
       date: new Date(),
