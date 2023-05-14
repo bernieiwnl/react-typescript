@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "../../css/Expenses.css";
@@ -15,8 +17,17 @@ interface Expenses {
 
 const Expenses = (props: Expenses) => {
   const { expenses } = props;
+  const [enteredYear, setEnteredYear] = useState("2019");
+  const onSelectYearHandler = (year: string) => {
+    setEnteredYear(year);
+  };
+
   return (
     <>
+      <ExpenseFilter
+        selected={enteredYear}
+        onSelectYear={onSelectYearHandler}
+      />
       <Card className="expenses">
         {expenses.map((item) => (
           <ExpenseItem

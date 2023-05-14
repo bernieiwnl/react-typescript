@@ -1,20 +1,26 @@
-import React from "react";
 import ExpenseForm from "./ExpenseForm";
 import "../../css/NewExpense.css";
 
-type InputExpense = {
+interface Props {
+  onAddExpense: (chilExpense: Expense) => void;
+}
+
+type Expense = {
+  id: string;
   title: string;
   amount: number;
   date: Date;
 };
 
-const NewExpense = () => {
-  const saveExpenseHandler = (enteredExpenseData: InputExpense) => {
+const NewExpense = ({ onAddExpense }: Props) => {
+  const saveExpenseHandler = (enteredExpenseData: Expense) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    console.log(expenseData);
+
+    // pass data from new expense component to parent (App component)
+    onAddExpense(expenseData);
   };
 
   return (
