@@ -94,9 +94,9 @@ const ExpenseForm = ({ onSaveExpenseData }: Props) => {
               onChange={dateChangeHandler}
             />
           </div>
-          <div className="new-expense__actions">
-            <button>Add Expense</button>
-          </div>
+        </div>
+        <div className="new-expense__actions">
+          <button>Add Expense</button>
         </div>
       </form>
     </>
