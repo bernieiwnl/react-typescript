@@ -1,6 +1,7 @@
-import "./App.css";
+import { useState } from "react";
 import Expenses from "./components/Expense/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import "./App.css";
 
 function App() {
   type Expense = {
@@ -10,7 +11,7 @@ function App() {
     date: Date;
   };
 
-  const expenses: Expense[] = [
+  const DUMMY_EXPENSES: Expense[] = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -32,14 +33,17 @@ function App() {
     },
   ];
 
+  const [currentExpenses, setCurrentExpenses] = useState(DUMMY_EXPENSES);
+
   const addExpenseHandler = (expense: Expense) => {
-    console.log(expense);
+    console.log("triggering addExpenseHandler");
+    setCurrentExpenses((prevState) => [expense, ...prevState]);
   };
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <Expenses expenses={currentExpenses} />
     </div>
   );
 }

@@ -22,9 +22,9 @@ const Expenses = (props: Expenses) => {
     setEnteredYear(year);
   };
 
-  const filteredExpense = expenses.filter((expense) => {
-    return expense.date.getFullYear() === parseInt(enteredYear);
-  });
+  const filteredExpense = expenses.filter(
+    (expense) => expense.date.getFullYear() === parseInt(enteredYear)
+  );
 
   console.log(filteredExpense);
 
