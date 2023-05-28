@@ -1,16 +1,10 @@
 import ExpenseForm from "./ExpenseForm";
 import "../../css/NewExpense.css";
+import { Expense } from "../utils/ExpenseType";
 
 interface Props {
   onAddExpense: (chilExpense: Expense) => void;
 }
-
-type Expense = {
-  id: string;
-  title: string;
-  amount: number;
-  date: Date;
-};
 
 const NewExpense = ({ onAddExpense }: Props) => {
   const saveExpenseHandler = (enteredExpenseData: Expense) => {

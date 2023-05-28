@@ -1,15 +1,9 @@
 import { useState } from "react";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
+import { Expense } from "../utils/ExpenseType";
 import ExpenseList from "./ExpenseList";
 import Card from "../UI/Card";
 import "../../css/Expenses.css";
-
-type Expense = {
-  id: string;
-  title: string;
-  amount: number;
-  date: Date;
-};
 
 interface Props {
   items: Expense[];

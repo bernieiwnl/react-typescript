@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import "../../css/ExpenseForm.css";
+import { Expense } from "../utils/ExpenseType";
 
 interface Props {
   onSaveExpenseData: (childEnteredExpenseData: Expense) => void;
 }
-
-type Expense = {
-  id: string;
-  title: string;
-  amount: number;
-  date: Date;
-};
 
 const ExpenseForm = ({ onSaveExpenseData }: Props) => {
   const [enteredExpense, setEnteredExpense] = useState<Expense>({

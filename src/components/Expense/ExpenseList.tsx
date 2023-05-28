@@ -1,12 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
+import { Expense } from "../utils/ExpenseType";
 import "../../css/ExpenseList.css";
-
-type Expense = {
-  id: string;
-  title: string;
-  amount: number;
-  date: Date;
-};
 
 interface Props {
   items: Expense[];
