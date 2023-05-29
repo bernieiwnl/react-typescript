@@ -4,9 +4,10 @@ import { Expense } from "../utils/ExpenseType";
 
 interface Props {
   onSaveExpenseData: (childEnteredExpenseData: Expense) => void;
+  onCancelExpenseForm: () => void;
 }
 
-const ExpenseForm = ({ onSaveExpenseData }: Props) => {
+const ExpenseForm = ({ onSaveExpenseData, onCancelExpenseForm }: Props) => {
   const [enteredExpense, setEnteredExpense] = useState<Expense>({
     id: "",
     title: "",
@@ -55,6 +56,10 @@ const ExpenseForm = ({ onSaveExpenseData }: Props) => {
     });
   };
 
+  const cancelFormHandler = () => {
+    onCancelExpenseForm();
+  };
+
   // adding value properties on all input fields = two way binding.
   return (
     <>
@@ -88,6 +93,9 @@ const ExpenseForm = ({ onSaveExpenseData }: Props) => {
               onChange={dateChangeHandler}
             />
           </div>
+        </div>
+        <div className="new-expense__actions">
+          <button onClick={cancelFormHandler}>Cancel</button>
         </div>
         <div className="new-expense__actions">
           <button>Add Expense</button>
