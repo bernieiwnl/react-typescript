@@ -4,7 +4,7 @@ import { Expense } from "../utils/ExpenseType";
 import { useState } from "react";
 
 interface Props {
-  onAddExpense: (chilExpense: Expense) => void;
+  onAddExpense: (childExpensed: Expense) => void;
 }
 
 const NewExpense = ({ onAddExpense }: Props) => {
@@ -19,8 +19,8 @@ const NewExpense = ({ onAddExpense }: Props) => {
     onAddExpense(expenseData);
   };
 
-  const setExpenseFormHandler = () => {
-    setCurrentForm(0);
+  const setExpenseFormHandler = (cancelCurrentForm: number) => {
+    setCurrentForm(cancelCurrentForm);
   };
 
   if (currentForm === 0) {
