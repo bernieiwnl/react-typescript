@@ -1,4 +1,4 @@
-import { Expense, ChartData } from "./Type";
+import { Expense } from "./Type";
 
 export const DUMMY_EXPENSES: Expense[] = [
   {
@@ -48,53 +48,53 @@ export const DUMMY_EXPENSES: Expense[] = [
 
 export const ARRAY_OF_YEAR = [2019, 2020, 2021, 2022, 2023];
 
-export const ARRAY_OF_CHART: ChartData[] = [
-  {
-    label: "Jan",
-    value: 0,
-  },
-  {
-    label: "Feb",
-    value: 0,
-  },
-  {
-    label: "Mar",
-    value: 0,
-  },
-  {
-    label: "Apr",
-    value: 0,
-  },
-  {
-    label: "May",
-    value: 0,
-  },
-  {
-    label: "Jun",
-    value: 0,
-  },
-  {
-    label: "Jul",
-    value: 0,
-  },
-  {
-    label: "Aug",
-    value: 0,
-  },
-  {
-    label: "Sep",
-    value: 0,
-  },
-  {
-    label: "Oct",
-    value: 0,
-  },
-  {
-    label: "Nov",
-    value: 0,
-  },
-  {
-    label: "Des",
-    value: 0,
-  },
-];
+// export const ARRAY_OF_CHART: ChartData[] = [
+//   {
+//     label: "Jan",
+//     value: 0,
+//   },
+//   {
+//     label: "Feb",
+//     value: 0,
+//   },
+//   {
+//     label: "Mar",
+//     value: 0,
+//   },
+//   {
+//     label: "Apr",
+//     value: 0,
+//   },
+//   {
+//     label: "May",
+//     value: 0,
+//   },
+//   {
+//     label: "Jun",
+//     value: 0,
+//   },
+//   {
+//     label: "Jul",
+//     value: 0,
+//   },
+//   {
+//     label: "Aug",
+//     value: 0,
+//   },
+//   {
+//     label: "Sep",
+//     value: 0,
+//   },
+//   {
+//     label: "Oct",
+//     value: 0,
+//   },
+//   {
+//     label: "Nov",
+//     value: 0,
+//   },
+//   {
+//     label: "Des",
+//     value: 0,
+//   },
+// ];

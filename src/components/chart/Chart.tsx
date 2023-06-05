@@ -12,6 +12,8 @@ const Chart = ({ dataPointsOfChart }: Props) => {
 
   const totalMaxValue = Math.max(...dataPointsOfValues);
 
+  console.log(totalMaxValue);
+
   return (
     <div className="chart">
       {dataPointsOfChart.map((dataPoints) => (
