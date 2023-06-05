@@ -1,9 +1,10 @@
 import { useState } from "react";
-import ExpenseFilter from "../expenseFilter/ExpenseFilter";
-import { Expense } from "../utils/ExpenseType";
+import ExpenseFilter from "../Filter/ExpenseFilter";
+import { Expense } from "../Utils/Type";
 import ExpenseList from "./ExpenseList";
-import Card from "../ui/Card";
+import Card from "../Ui/Card";
 import "../../css/Expenses.css";
+import ExpenseChart from "./ExpenseChart";
 
 interface Props {
   items: Expense[];
@@ -27,6 +28,7 @@ const Expenses = (props: Props) => {
           selected={enteredYear}
           onSelectYear={onSelectYearHandler}
         />
+        <ExpenseChart items={filteredExpense} />
         <ExpenseList items={filteredExpense} />
       </Card>
     </>

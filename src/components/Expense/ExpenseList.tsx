@@ -1,5 +1,5 @@
 import ExpenseItem from "./ExpenseItem";
-import { Expense } from "../utils/ExpenseType";
+import { Expense } from "../Utils/Type";
 import "../../css/ExpenseList.css";
 
 interface Props {
