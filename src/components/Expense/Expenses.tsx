@@ -1,8 +1,8 @@
 import { useState } from "react";
-import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
+import ExpenseFilter from "../expenseFilter/ExpenseFilter";
 import { Expense } from "../utils/ExpenseType";
 import ExpenseList from "./ExpenseList";
-import Card from "../UI/Card";
+import Card from "../ui/Card";
 import "../../css/Expenses.css";
 
 interface Props {

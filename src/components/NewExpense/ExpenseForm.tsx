@@ -4,7 +4,7 @@ import { Expense } from "../utils/ExpenseType";
 
 interface Props {
   onSaveExpenseData: (childEnteredExpenseData: Expense) => void;
-  onCancelExpenseForm: () => void;
+  onCancelExpenseForm: (cancelCurrentForm: number) => void;
 }
 
 const ExpenseForm = ({ onSaveExpenseData, onCancelExpenseForm }: Props) => {
@@ -57,7 +57,7 @@ const ExpenseForm = ({ onSaveExpenseData, onCancelExpenseForm }: Props) => {
   };
 
   const cancelFormHandler = () => {
-    onCancelExpenseForm();
+    onCancelExpenseForm(1);
   };
 
   // adding value properties on all input fields = two way binding.
