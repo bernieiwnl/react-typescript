@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Expenses from "./components/expense/Expenses";
-import NewExpense from "./components/newExpense/NewExpense";
-import { Expense } from "./components/utils/ExpenseType";
-import { DUMMY_EXPENSES } from "./components/utils/DummyExpense";
+import Expenses from "./components/Expense/Expenses";
+import NewExpense from "./components/FormExpense/NewExpense";
+import { Expense } from "./components/Utils/Type";
+import { DUMMY_EXPENSES } from "./components/Utils/Data";
 import "./App.css";
 
 function App() {

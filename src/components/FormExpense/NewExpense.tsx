@@ -1,6 +1,6 @@
 import ExpenseForm from "./ExpenseForm";
 import "../../css/NewExpense.css";
-import { Expense } from "../utils/ExpenseType";
+import { Expense } from "../Utils/Type";
 import { useState } from "react";
 
 interface Props {
@@ -21,6 +21,7 @@ const NewExpense = ({ onAddExpense }: Props) => {
 
   const setExpenseFormHandler = (cancelCurrentForm: number) => {
     setCurrentForm(cancelCurrentForm);
+    console.log(cancelCurrentForm);
   };
 
   if (currentForm === 0) {

@@ -4,3 +4,8 @@ export type Expense = {
   amount: number;
   date: Date;
 };
+
+export type ChartData = {
+  label: string;
+  value: number;
+};

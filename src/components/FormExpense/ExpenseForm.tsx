@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../css/ExpenseForm.css";
-import { Expense } from "../utils/ExpenseType";
+import { Expense } from "../Utils/Type";
 
 interface Props {
   onSaveExpenseData: (childEnteredExpenseData: Expense) => void;
@@ -57,7 +57,7 @@ const ExpenseForm = ({ onSaveExpenseData, onCancelExpenseForm }: Props) => {
   };
 
   const cancelFormHandler = () => {
-    onCancelExpenseForm(1);
+    onCancelExpenseForm(0);
   };
 
   // adding value properties on all input fields = two way binding.
@@ -96,8 +96,6 @@ const ExpenseForm = ({ onSaveExpenseData, onCancelExpenseForm }: Props) => {
         </div>
         <div className="new-expense__actions">
           <button onClick={cancelFormHandler}>Cancel</button>
-        </div>
-        <div className="new-expense__actions">
           <button>Add Expense</button>
         </div>
       </form>

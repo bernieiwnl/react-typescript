@@ -1,12 +1,11 @@
 import React from "react";
 import "../../css/ExpenseFilter.css";
+import { ARRAY_OF_YEAR } from "../Utils/Data";
 
 interface Props {
   onSelectYear: (year: string) => void;
   selected: string;
 }
-
-const ARRAY_OF_YEAR = [2019, 2020, 2021, 2022, 2023];
 
 const ExpenseFilter = ({ onSelectYear, selected }: Props) => {
   const onSelectChangeHandler = (
@@ -22,7 +21,9 @@ const ExpenseFilter = ({ onSelectYear, selected }: Props) => {
           <label>Filter by year</label>
           <select value={selected} onChange={onSelectChangeHandler}>
             {ARRAY_OF_YEAR.map((year) => (
-              <option value={year}>{year}</option>
+              <option key={year} value={year}>
+                {year}
+              </option>
             ))}
           </select>
         </div>
